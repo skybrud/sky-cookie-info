@@ -2,11 +2,12 @@
 
 Angular-component to show cookie-information from cookieinformation.dk
 
-Setup your license key at config time in the provider and simply put the cookie-info component where you want to use it.
+Setup your license key (and optionally culture) at config time in the provider and simply put the cookie-info component where you want to use it.
 
 ```js
 angular.module('yourApp',['skyCookieInfo']).config(['skyCookieInfoProvider',function(skyCookieInfoProvider){
 	skyCookieInfoProvider.license = 'license-code-here';
+	skyCookieInfoProvider.culture = 'EN';
 }]);
 ```
 

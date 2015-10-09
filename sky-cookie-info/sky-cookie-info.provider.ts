@@ -4,6 +4,7 @@ interface Window {
 declare module sky {
 	interface ISkyCookieInfoProvider {
 		license: string;
+		culture: string;
 		$get(): ISkyCookieInfoService;
 	}
 	interface ISkyCookieInfoService {
@@ -19,6 +20,7 @@ declare module sky {
 		var _this = this;
 
 		_this.license = '';
+		_this.culture = 'EN'; // Default is english
 
 		_this.$get = get;
 
@@ -41,7 +43,7 @@ declare module sky {
 
 					var script: any = document.createElement('script');
 					script.dataset.culture = 'EN';
-					script.src = 'https://policy.cookieinformation.com/' + license + '/cdreport.js?whitelabel=true&referer=' + encodeURIComponent($location.href);
+					script.src = 'https://policy.cookieinformation.com/' + license + '/cdreport.js?whitelabel=true&culture=' + _this.culture + '&referer=' + encodeURIComponent($location.href);
 					document.body.appendChild(script);
 				}
 				return defer.promise;

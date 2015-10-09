@@ -4,6 +4,7 @@ interface Window {
 declare module sky {
     interface ISkyCookieInfoProvider {
         license: string;
+        culture: string;
         $get(): ISkyCookieInfoService;
     }
     interface ISkyCookieInfoService {
