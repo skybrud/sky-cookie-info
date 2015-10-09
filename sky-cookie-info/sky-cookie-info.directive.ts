@@ -7,7 +7,7 @@
 		var directive = {
 			restrict: 'E',
 			controller: skyCookieInfoController,
-			templateUrl:'/sky-cookie-info/sky-cookie-info.template.html',
+			template: '<div ng-bind-html="skyCookieInfoCtrl.text"></div>',
 			controllerAs:'skyCookieInfoCtrl',
 			scope:{}
 		};
