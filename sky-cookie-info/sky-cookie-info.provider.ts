@@ -1,5 +1,5 @@
 interface Window {
-	CookiebotCookieDeclaration: any;
+	CookieDeclaration: any;
 }
 declare module sky {
 	interface ISkyCookieInfoProvider {
@@ -30,7 +30,7 @@ declare module sky {
 
 			var defer;
 
-			window.CookiebotCookieDeclaration = {
+			window.CookieDeclaration = {
 				InjectCookieDeclaration(text) {
 					defer.resolve($sce.trustAsHtml(text));
 				}
@@ -43,7 +43,7 @@ declare module sky {
 
 					var script: any = document.createElement('script');
 					script.dataset.culture = 'EN';
-					script.src = 'https://policy.cookieinformation.com/' + license + '/cdreport.js?whitelabel=true&culture=' + _this.culture + '&referer=' + encodeURIComponent($location.href);
+					script.src = 'https://policy.cookieinformation.com/' + license + '/cdreport.js?whitelabel=true&culture=' + _this.culture + '&referer=' + encodeURIComponent($location.$$absUrl);
 					document.body.appendChild(script);
 				}
 				return defer.promise;
